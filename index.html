@@ -20,6 +20,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#services">خدماتنا</a></li>
+    <li><a href="#ajyal-plus" class="nav-app">Ajyal Plus ✨</a></li>
     <li><a href="#why">لماذا نحن</a></li>
     <li><a href="#contact">تواصل معنا</a></li>
     <li><a href="#contact" class="nav-cta">ابدأ الآن</a></li>
@@ -114,6 +115,73 @@
   </div>
 </div>
 
+<!-- AJYAL PLUS -->
+<div class="ajyal-section" id="ajyal-plus">
+  <div class="ajyal-inner">
+    <div class="ajyal-badge">
+      <span class="soon-dot"></span>
+      قريباً جداً
+    </div>
+    <div class="ajyal-content">
+      <div class="ajyal-text">
+        <div class="ajyal-logo-row">
+          <div class="ajyal-icon">🚀</div>
+          <h2 class="ajyal-title">Ajyal Plus</h2>
+        </div>
+        <p class="ajyal-desc">تطبيق ذكي يُحوّل بياناتك من نظام أجيال إلى وثائق جاهزة بنقرة واحدة. سجّل دخولك بحسابك في أجيال، واستخرج بياناتك مباشرةً لإنشاء مستنداتك تلقائياً.</p>
+        <ul class="ajyal-features">
+          <li><span class="feat-icon">📒</span> دفتر العلامات تلقائياً</li>
+          <li><span class="feat-icon">📋</span> دفتر الحضور والغياب</li>
+          <li><span class="feat-icon">📊</span> إحصاءات ونتائج الطلاب</li>
+          <li><span class="feat-icon">📄</span> استمارات الطلب الرسمية</li>
+          <li><span class="feat-icon">🏅</span> شهادات الطلاب</li>
+          <li><span class="feat-icon">📁</span> قوالب مخصصة خاصة بك</li>
+        </ul>
+        <div class="ajyal-notify">
+          <p class="notify-label">أدخل بريدك لتكون أول من يعلم عند الإطلاق</p>
+          <div class="notify-form">
+            <input type="email" placeholder="البريد الإلكتروني" class="notify-input" />
+            <button class="notify-btn" onclick="handleNotify(this)">أبلغني</button>
+          </div>
+          <p class="notify-msg" id="notify-msg" style="display:none; color: #22c55e; font-size: 15px; margin-top: 10px;">✓ شكراً! سنُبلغك فور الإطلاق.</p>
+        </div>
+      </div>
+      <div class="ajyal-mockup">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="phone-logo">Ajyal Plus</div>
+              <div class="phone-status">●●●</div>
+            </div>
+            <div class="phone-welcome">أهلاً، المعلم أحمد 👋</div>
+            <div class="phone-cards">
+              <div class="phone-card blue">
+                <div class="pc-icon">📒</div>
+                <div class="pc-label">دفتر العلامات</div>
+                <div class="pc-ready">جاهز ✓</div>
+              </div>
+              <div class="phone-card green">
+                <div class="pc-icon">📋</div>
+                <div class="pc-label">الحضور والغياب</div>
+                <div class="pc-ready">جاهز ✓</div>
+              </div>
+              <div class="phone-card purple">
+                <div class="pc-icon">📊</div>
+                <div class="pc-label">الإحصاءات</div>
+                <div class="pc-ready">جاهز ✓</div>
+              </div>
+            </div>
+            <div class="phone-sync">
+              <span class="sync-dot"></span>
+              متصل بنظام أجيال
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- WHY US -->
 <div class="why-section" id="why">
   <div class="why-inner">
@@ -168,10 +236,10 @@
         <h4>واتساب</h4>
         <p>الأسرع للتواصل المباشر</p>
       </a>
-      <a href="mailto:info@futureisnow.site" class="contact-card">
+      <a href="/cdn-cgi/l/email-protection#c4adaaa2ab84a2b1b0b1b6a1adb7aaabb3eab7adb0a1" class="contact-card">
         <div class="c-icon">📧</div>
         <h4>البريد الإلكتروني</h4>
-        <p>info@futureisnow.site</p>
+        <p><span class="__cf_email__" data-cfemail="3d54535b527d5b4849484f58544e53524a134e544958">[email&#160;protected]</span></p>
       </a>
     </div>
   </div>
@@ -185,10 +253,27 @@
     <ul class="footer-links">
       <li><a href="#">الرئيسية</a></li>
       <li><a href="#services">الخدمات</a></li>
+      <li><a href="#ajyal-plus">Ajyal Plus</a></li>
       <li><a href="#contact">تواصل</a></li>
     </ul>
   </div>
 </footer>
 
+<script>
+function handleNotify(btn) {
+  const input = btn.previousElementSibling;
+  const msg = document.getElementById('notify-msg');
+  if (input.value && input.value.includes('@')) {
+    msg.style.display = 'block';
+    input.value = '';
+    btn.textContent = '✓';
+    btn.style.background = '#22c55e';
+    btn.disabled = true;
+  } else {
+    input.style.borderColor = '#ef4444';
+    setTimeout(() => input.style.borderColor = '', 1500);
+  }
+}
+</script>
 </body>
 </html>

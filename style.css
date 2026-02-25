@@ -525,6 +525,289 @@ footer p {
   transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--accent); }
+/* NAV APP LINK */
+.nav-app {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+  padding: 10px 18px !important;
+}
+.nav-app:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #4f52d9, #7c3aed) !important;
+}
+/* AJYAL PLUS SECTION */
+.ajyal-section {
+  background: linear-gradient(135deg, #0f0c29, #1a1040, #24243e);
+  padding: 90px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.ajyal-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ajyal-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ajyal-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.ajyal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(99,102,241,0.2);
+  border: 1.5px solid rgba(99,102,241,0.4);
+  border-radius: 50px;
+  padding: 8px 20px;
+  color: #a5b4fc;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.soon-dot {
+  width: 10px;
+  height: 10px;
+  background: #6366f1;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+  display: inline-block;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.6); }
+  50% { box-shadow: 0 0 0 7px rgba(99,102,241,0); }
+}
+.ajyal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.ajyal-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.ajyal-icon {
+  font-size: 36px;
+  width: 60px;
+  height: 60px;
+  background: rgba(99,102,241,0.2);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ajyal-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #a5b4fc, #c4b5fd, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  text-align: right;
+}
+.ajyal-desc {
+  font-size: 17px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+.ajyal-features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.ajyal-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.feat-icon { font-size: 18px; }
+.ajyal-notify {
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 24px;
+}
+.notify-label {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 14px;
+}
+.notify-form {
+  display: flex;
+  gap: 10px;
+}
+.notify-input {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 15px;
+  font-family: 'Tajawal', sans-serif;
+  text-align: right;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.notify-input:focus { border-color: #6366f1; }
+.notify-input::placeholder { color: rgba(255,255,255,0.35); }
+.notify-btn {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Tajawal', sans-serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.notify-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+/* PHONE MOCKUP */
+.ajyal-mockup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phone-frame {
+  width: 280px;
+  background: #1e1b4b;
+  border-radius: 36px;
+  padding: 16px;
+  border: 2px solid rgba(99,102,241,0.4);
+  box-shadow: 0 0 60px rgba(99,102,241,0.25), 0 20px 60px rgba(0,0,0,0.5);
+}
+.phone-screen {
+  background: #0f0e1a;
+  border-radius: 24px;
+  padding: 20px 16px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.phone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.phone-logo {
+  font-size: 16px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.phone-status {
+  font-size: 8px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 2px;
+}
+.phone-welcome {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  text-align: right;
+}
+.phone-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.phone-card {
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.phone-card.blue { background: rgba(59,130,246,0.15); }
+.phone-card.green { background: rgba(34,197,94,0.12); }
+.phone-card.purple { background: rgba(139,92,246,0.15); }
+.pc-icon { font-size: 20px; }
+.pc-label {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  text-align: right;
+}
+.pc-ready {
+  font-size: 12px;
+  color: #4ade80;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.phone-sync {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 13px;
+  color: #4ade80;
+  font-weight: 600;
+  margin-top: auto;
+}
+.sync-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  .ajyal-section { padding: 60px 20px; }
+  .ajyal-content { grid-template-columns: 1fr; gap: 40px; }
+  .ajyal-mockup { display: none; }
+  .ajyal-features { grid-template-columns: 1fr; }
+  .ajyal-title { font-size: 32px; }
+}
 /* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
