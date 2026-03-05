@@ -11,6 +11,7 @@
 <body>
 
 <main>
+  <!-- HERO -->
   <section class="ap-hero">
     <div class="ap-hero__inner">
       <div class="ap-hero__badge"><span class="soon-dot"></span> قريباً جداً</div>
@@ -28,6 +29,7 @@
     <div class="ap-hero__scroll">▼</div>
   </section>
 
+  <!-- WHAT IS IT -->
   <section class="section">
     <div class="ap-what">
       <div class="ap-what__text">
@@ -36,35 +38,24 @@
         <p>Ajyal Plus يربط مباشرةً بحسابك في نظام أجيال التعليمي ويسحب بيانات طلابك تلقائياً — دون إدخال يدوي، دون أخطاء، دون وقت ضائع.</p>
         <p>في خطوات بسيطة تحصل على جميع وثائقك المدرسية جاهزة للطباعة.</p>
       </div>
-      <div class="ap-what__steps">
-        <div class="ap-step"><div class="ap-step__num">١</div><div><h4>سجّل دخولك</h4><p>بنفس حساب أجيال الخاص بك</p></div></div>
-        <div class="ap-step__connector"></div>
-        <div class="ap-step"><div class="ap-step__num">٢</div><div><h4>اختر شعبتك</h4><p>يتم استيراد بيانات الطلاب تلقائياً</p></div></div>
-        <div class="ap-step__connector"></div>
-        <div class="ap-step"><div class="ap-step__num">٣</div><div><h4>اختر الوثيقة</h4><p>دفتر علامات، حضور، شهادة...</p></div></div>
-        <div class="ap-step__connector"></div>
-        <div class="ap-step"><div class="ap-step__num">٤</div><div><h4>اطبع أو حمّل</h4><p>الوثيقة جاهزة في ثوانٍ</p></div></div>
-      </div>
+      <!-- Steps rendered by site.js from values.js -->
+      <div class="ap-what__steps" id="ap-steps-container"></div>
     </div>
   </section>
 
+  <!-- FEATURES -->
   <section class="ap-features-section">
     <div class="ap-features-inner">
       <div class="section-header">
         <div class="section-tag" style="background:rgba(255,255,255,0.12);color:white;">المميزات</div>
         <h2 style="color:white;">كل ما تحتاجه في مكان واحد</h2>
       </div>
-      <div class="ap-features-grid">
-        <div class="ap-feat"><div class="ap-feat__icon">📒</div><h3>دفتر العلامات</h3><p>يُنشأ تلقائياً بأسماء الطلاب وعلاماتهم المستوردة من نظام أجيال</p></div>
-        <div class="ap-feat"><div class="ap-feat__icon">📋</div><h3>دفتر الحضور والغياب</h3><p>جدول حضور جاهز بجميع أسماء الطلاب لكل شعبة</p></div>
-        <div class="ap-feat"><div class="ap-feat__icon">📊</div><h3>الإحصاءات والتحليلات</h3><p>نسب النجاح، المعدلات، توزيع الدرجات — كلها تُحسب تلقائياً</p></div>
-        <div class="ap-feat"><div class="ap-feat__icon">📄</div><h3>استمارات الطلب</h3><p>نماذج رسمية جاهزة مع بيانات الطالب مُدرجة مسبقاً</p></div>
-        <div class="ap-feat"><div class="ap-feat__icon">🏅</div><h3>شهادات الطلاب</h3><p>شهادات احترافية بأسماء الطلاب وعلاماتهم جاهزة للطباعة</p></div>
-        <div class="ap-feat"><div class="ap-feat__icon">📁</div><h3>قوالب مخصصة</h3><p>أنشئ قوالب خاصة بك واستخدمها مع بيانات أي شعبة</p></div>
-      </div>
+      <!-- Features rendered by site.js from values.js -->
+      <div class="ap-features-grid" id="ap-features-container"></div>
     </div>
   </section>
 
+  <!-- SECURITY NOTE -->
   <section class="section">
     <div class="ap-security">
       <div class="ap-security__icon">🔒</div>
@@ -75,6 +66,7 @@
     </div>
   </section>
 
+  <!-- BOTTOM CTA -->
   <section class="ap-cta-section">
     <div class="ap-cta-inner">
       <h2>كن أول من يجرّب Ajyal Plus</h2>
@@ -88,6 +80,7 @@
   </section>
 </main>
 
+<script src="values.js"></script>
 <script src="site.js"></script>
 </body>
 </html>

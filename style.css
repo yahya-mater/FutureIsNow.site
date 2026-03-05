@@ -714,7 +714,7 @@ h4 { font-size: 18px; font-weight: 700; color: var(--ink); }
 .pricing-note p    { margin: 0; line-height: 1.7; }
 .pricing-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 24px; max-width: 1000px; margin: 0 auto 40px;
+  gap: 24px; max-width: 1100px; margin: 0 auto 40px;
 }
 .pricing-card {
   background: var(--surface); border: 2px solid var(--border); border-radius: 20px;
@@ -891,6 +891,86 @@ h4 { font-size: 18px; font-weight: 700; color: var(--ink); }
   .ap-hero__notify { flex-direction: column; align-items: stretch; }
 }
 
+.service-zarqa-tag {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--accent);
+  background: var(--accent-light);
+  border-radius: 6px;
+  padding: 3px 10px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+.service-card--accent {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+/* ── PRICING: PDF note & complex pricing ─────────────────── */
+.pricing-pdf-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #166534;
+  margin-top: -8px;
+}
+.pricing-pdf-note strong {
+  font-weight: 800;
+  color: #15803d;
+}
+.pricing-card--featured .pricing-pdf-note {
+  background: rgba(187,247,208,0.15);
+  border-color: rgba(187,247,208,0.4);
+  color: #bbf7d0;
+}
+.pricing-card--featured .pricing-pdf-note strong {
+  color: #4ade80;
+}
+.pricing-complex-note {
+  font-size: 13px;
+  color: var(--ink-light);
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 13px;
+  line-height: 1.6;
+  margin-top: -8px;
+}
+.price-range-sep {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ink-light);
+  margin: 0 2px;
+}
 
+/* ── PDF BANNER (pricing page) ───────────────────────────── */
+.pdf-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 2px solid #86efac;
+  border-radius: 18px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pdf-banner__icon { font-size: 36px; flex-shrink: 0; }
+.pdf-banner h4    { font-size: 19px; color: #14532d; margin-bottom: 6px; }
+.pdf-banner p     { font-size: 15px; color: #166534; line-height: 1.7; margin: 0; }
+.pdf-banner strong { font-weight: 800; }
+@media (max-width: 768px) {
+  .pdf-banner { flex-direction: column; padding: 20px; }
+}
 
-active
+/* PDF note — formula variant (no bold price, slightly different label) */
+.pricing-pdf-note--formula {
+  font-size: 13px;
+  line-height: 1.5;
+}

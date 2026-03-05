@@ -37,12 +37,7 @@
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item"><div class="stat-num">٥٠٠+</div><div class="stat-label">مدرسة تثق بنا</div></div>
-    <div class="stat-item"><div class="stat-num">١٠٠٠٠+</div><div class="stat-label">امتحان مُنجَز</div></div>
-    <div class="stat-item"><div class="stat-num">٩٩٪</div><div class="stat-label">دقة في الإدخال</div></div>
-    <div class="stat-item"><div class="stat-num">٢٤/٧</div><div class="stat-label">خدمة مستمرة</div></div>
-  </div>
+  <div class="stats-inner" id="stats-container"></div>
 </div>
 
 <!-- SERVICES -->
@@ -52,38 +47,7 @@
     <h2>كل ما تحتاجه مدرستك في مكان واحد</h2>
     <p class="section-sub">نقدّم مجموعة متكاملة من الخدمات الإدارية والتعليمية المصمّمة خصيصاً لاحتياجات المدارس الأردنية.</p>
   </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">📝</div>
-      <h3>كتابة الامتحانات</h3>
-      <p>إعداد امتحانات وفق منهاج وزارة التربية والتعليم الأردنية بمختلف الأنواع والمستويات لجميع المراحل الدراسية.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">💻</div>
-      <h3>إدخال العلامات</h3>
-      <p>إدخال علامات الطلاب بدقة عالية على نظام وزارة التربية والتعليم الأردنية مع ضمان الخلو من الأخطاء.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📒</div>
-      <h3>دفتر العلامات</h3>
-      <p>تصميم وطباعة دفاتر العلامات المنظّمة والواضحة لتسهيل متابعة أداء الطلاب على مدار الفصل الدراسي.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📋</div>
-      <h3>دفتر الحضور والغياب</h3>
-      <p>توفير دفاتر حضور وغياب احترافية ومنظّمة تُمكِّن المعلم من متابعة انتظام الطلاب بسهولة ويسر.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📗</div>
-      <h3>دفتر التحضير</h3>
-      <p>طباعة وتوفير دفاتر التحضير الجاهزة وفق متطلبات الوزارة، لتوفير وقت المعلم وجهده.</p>
-    </div>
-    <div class="service-card" style="background:var(--accent);border-color:var(--accent);">
-      <div class="service-icon" style="background:rgba(255,255,255,0.2);">✨</div>
-      <h3 style="color:white;">خدمات إضافية</h3>
-      <p style="color:rgba(255,255,255,0.8);">لديك حاجة خاصة؟ نحن هنا لمساعدتك. تواصل معنا وسنجد الحل المناسب لك.</p>
-    </div>
-  </div>
+  <div class="services-grid" id="services-container"></div>
 </div>
 
 <!-- AJYAL PLUS TEASER -->
@@ -97,18 +61,11 @@
           <h2 class="ajyal-title">Ajyal Plus</h2>
         </div>
         <p class="ajyal-desc">تطبيق ذكي يُحوّل بياناتك من نظام أجيال إلى وثائق جاهزة بنقرة واحدة. سجّل دخولك بحسابك في أجيال، واستخرج بياناتك مباشرةً لإنشاء مستنداتك تلقائياً.</p>
-        <ul class="ajyal-features">
-          <li><span class="feat-icon">📒</span> دفتر العلامات تلقائياً</li>
-          <li><span class="feat-icon">📋</span> دفتر الحضور والغياب</li>
-          <li><span class="feat-icon">📊</span> إحصاءات ونتائج الطلاب</li>
-          <li><span class="feat-icon">📄</span> استمارات الطلب الرسمية</li>
-          <li><span class="feat-icon">🏅</span> شهادات الطلاب</li>
-          <li><span class="feat-icon">📁</span> قوالب مخصصة خاصة بك</li>
-        </ul>
+        <ul class="ajyal-features" id="ajyal-features-container"></ul>
         <div class="ajyal-notify">
           <p class="notify-label">أدخل بريدك لتكون أول من يعلم عند الإطلاق</p>
           <div class="notify-form">
-            <input type="email" placeholder="البريد الإلكتروني" class="notify-input" />
+            <input type="email" placeholder="البريد الإلكتروني" class="notify-input">
             <button class="notify-btn">أبلغني</button>
           </div>
           <p id="notify-msg" style="display:none;color:#22c55e;font-size:15px;margin-top:10px;">✓ شكراً! سنُبلغك فور الإطلاق.</p>
@@ -146,12 +103,7 @@
       <h2>الثقة والجودة والسرعة</h2>
       <p class="section-sub">نلتزم بتقديم أعلى معايير الجودة لأن مدرستك تستحق الأفضل.</p>
     </div>
-    <div class="why-grid">
-      <div class="why-item"><div class="why-check">✓</div><div class="why-text"><h4>دقة وموثوقية</h4><p>نعمل بأعلى معايير الدقة في كل مهمة لضمان خلوّها من أي خطأ.</p></div></div>
-      <div class="why-item"><div class="why-check">⚡</div><div class="why-text"><h4>سرعة في التنفيذ</h4><p>ننجز المهام في الوقت المحدد دون تأخير حتى تسير أمور مدرستك بانتظام.</p></div></div>
-      <div class="why-item"><div class="why-check">🏫</div><div class="why-text"><h4>خبرة في النظام الأردني</h4><p>فريقنا ملمّ تماماً بمتطلبات وزارة التربية والتعليم الأردنية وأنظمتها.</p></div></div>
-      <div class="why-item"><div class="why-check">💬</div><div class="why-text"><h4>تواصل سهل وميسّر</h4><p>خدمتنا بسيطة وودية، خاصةً للمعلمين والإداريين من مختلف الأعمار.</p></div></div>
-    </div>
+    <div class="why-grid" id="why-container"></div>
   </div>
 </div>
 
@@ -161,14 +113,14 @@
   <h2>جاهزون لمساعدتك</h2>
   <p>اختر الطريقة الأنسب للتواصل وسنرد عليك في أقرب وقت</p>
   <div class="cta-card">
-    <a href="https://wa.me/962XXXXXXXXX" class="btn-primary" style="width:100%;text-align:center;display:block;padding:18px;">اطلب الخدمة الآن عبر واتساب</a>
+    <a href="#" data-contact="whatsapp" class="btn-primary" style="width:100%;text-align:center;display:block;padding:18px;">اطلب الخدمة الآن عبر واتساب</a>
     <div class="contact-options">
-      <a href="https://wa.me/962XXXXXXXXX" class="contact-card">
+      <a href="#" data-contact="whatsapp" class="contact-card">
         <div class="c-icon">📱</div>
         <h4>واتساب</h4>
         <p>الأسرع للتواصل المباشر</p>
       </a>
-      <a href="mailto:info@futureisnow.site" class="contact-card">
+      <a href="#" data-contact="email" class="contact-card">
         <div class="c-icon">📧</div>
         <h4>البريد الإلكتروني</h4>
         <p>info@futureisnow.site</p>
@@ -177,6 +129,7 @@
   </div>
 </div>
 
+<script src="values.js"></script>
 <script src="site.js"></script>
 </body>
 </html>
