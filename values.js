@@ -21,7 +21,7 @@ window.VALUES = {
     logoIcon:     '🎓',           // used as fallback when logo is null
     tagline:      'خدمات متخصصة للمدارس الأردنية',
     location:     'الزرقاء، الأردن',
-    locationNote: 'الطباعة والتوصيل متاح في الزرقاء فقط',
+    locationNote: 'الطباعة والتوصيل متاح في مدينة الزرقاء والرصيفة فقط',
   },
 
   /* ── CONTACT ─────────────────────────────────────────────── */
@@ -62,10 +62,11 @@ window.VALUES = {
     {
       id:                  'exams',
       icon:                '📝',
-      image:               null,   // e.g. 'images/service-exams.png'
+      image:               null,
       title:               'كتابة الامتحانات',
       desc:                'إعداد امتحانات وفق منهاج وزارة التربية والتعليم الأردنية بمختلف الأنواع والمستويات لجميع المراحل الدراسية.',
       availableNationwide: true,
+      deliveryArea:        null,   // nationwide — no tag shown
     },
     {
       id:                  'marks-entry',
@@ -74,6 +75,7 @@ window.VALUES = {
       title:               'إدخال العلامات',
       desc:                'إدخال علامات الطلاب بدقة عالية على نظام وزارة التربية والتعليم الأردنية مع ضمان الخلو من الأخطاء.',
       availableNationwide: true,
+      deliveryArea:        null,   // nationwide — no tag shown
     },
     {
       id:                  'marks-booklet',
@@ -82,6 +84,7 @@ window.VALUES = {
       title:               'دفتر العلامات',
       desc:                'تصميم وطباعة دفاتر العلامات المنظّمة والواضحة لتسهيل متابعة أداء الطلاب على مدار الفصل الدراسي.',
       availableNationwide: false,
+      deliveryArea:        'الزرقاء والرصيفة',
     },
     {
       id:                  'attendance-booklet',
@@ -90,6 +93,7 @@ window.VALUES = {
       title:               'دفتر الحضور والغياب',
       desc:                'توفير دفاتر حضور وغياب احترافية ومنظّمة تُمكِّن المعلم من متابعة انتظام الطلاب بسهولة ويسر.',
       availableNationwide: false,
+      deliveryArea:        'الزرقاء والرصيفة',
     },
     {
       id:                  'prep-booklet',
@@ -98,6 +102,7 @@ window.VALUES = {
       title:               'دفتر التحضير',
       desc:                'طباعة وتوفير دفاتر التحضير الجاهزة وفق متطلبات الوزارة، لتوفير وقت المعلم وجهده.',
       availableNationwide: false,
+      deliveryArea:        'الزرقاء والرصيفة',
     },
   ],
 

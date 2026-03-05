@@ -146,8 +146,8 @@
   var servicesContainer = document.getElementById('services-container');
   if (servicesContainer) {
     var serviceCards = services.map(function (s) {
-      var zarqaTag = !s.availableNationwide
-        ? '<span class="service-zarqa-tag">📍 الزرقاء فقط</span>'
+      var zarqaTag = (!s.availableNationwide && s.deliveryArea)
+        ? '<span class="service-zarqa-tag">📍 ' + s.deliveryArea + ' فقط</span>'
         : '';
       return '<div class="service-card">'
         + '<div class="service-icon">' + s.icon + '</div>'
