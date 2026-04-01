@@ -28,7 +28,7 @@ window.VALUES = {
   /* ↓↓↓ CHANGE THESE TWO LINES TO UPDATE ALL CONTACT LINKS ↓↓↓ */
   contact: {
     whatsapp: {
-      number:  '962XXXXXXXXX',          // ← your number without the + sign
+      number:  '962788546690',          // ← your number without the + sign
       label:   'واتساب',
       icon:    '📱',
       note:    'الأسرع للتواصل المباشر',
@@ -47,12 +47,13 @@ window.VALUES = {
     { href: 'pricing.html',    label: 'الأسعار' },
     { href: 'faq.html',        label: 'الأسئلة الشائعة' },
     { href: 'ajyal-plus.html', label: 'Ajyal Plus', special: true },
+    { href: 'apps.html',       label: '🧰 تطبيقاتنا', special: true },
   ],
 
   /* ── STATS (homepage bar) ────────────────────────────────── */
   stats: [
-    { num: '٥٠٠+',    label: 'مدرسة تثق بنا' },
-    { num: '١٠٠٠٠+',  label: 'امتحان مُنجَز' },
+    { num: '٥٠+',    label: 'مدرسة تثق بنا' },
+    { num: '٨٠٠+',  label: 'امتحان مُنجَز' },
     { num: '٩٩٪',     label: 'دقة في الإدخال' },
     { num: '٢٤/٧',    label: 'خدمة مستمرة' },
   ],
@@ -334,6 +335,108 @@ window.VALUES = {
     { icon: '⏰', title: 'الالتزام بالمواعيد',    desc: 'إذا قلنا غداً، نسلّم غداً. المدرسة لا تنتظر.' },
     { icon: '🔒', title: 'خصوصية وأمان',          desc: 'بيانات الطلاب والمدرسة تبقى بيننا. نحافظ على سرية كاملة.' },
     { icon: '🤝', title: 'خدمة من القلب',          desc: 'نحن من الزرقاء ونخدم مجتمعنا. علاقتنا بك تتجاوز مجرد الخدمة.' },
+  ],
+
+  /* ── APPS ────────────────────────────────────────────────── */
+  /*
+   * Each app:
+   *   id, name, tagline, desc, icon (emoji or null),
+   *   theme: { primary, secondary, bg, text }  — hex colours
+   *   status: 'live' | 'coming-soon' | 'beta'
+   *   appUrl: URL to open in browser (null if not live)
+   *   downloadUrl: URL for .exe download (null if none)
+   *   downloadLabel: button label for download
+   *   tags: string[]
+   *   features: string[]
+   */
+  apps: [
+    {
+      id:            'mizan',
+      name:          'Mizan',
+      tagline:       'أداة الموازنة المدرسية الذكية',
+      desc:          'تطبيق ويب متكامل لإدارة الموازنات المدرسية وتتبع الإنفاق وإصدار التقارير المالية بسهولة وسرعة. يعمل مباشرةً في المتصفح دون الحاجة لتثبيت أي شيء.',
+      icon:          '⚖️',
+      theme: {
+        primary:   '#ea6c00',
+        secondary: '#c45300',
+        bg:        'linear-gradient(135deg, #1A1A2E 0%, #16213e 60%, #16213e 100%)',
+        accent:    '#ea6c00',
+        card:      'rgba(255,255,255,0.07)',
+        border:    'rgba(253, 191, 147, 0.25)',
+      },
+      status:        'live',
+      appUrl:        'https://mizan.futureisnow.site',          // ← replace with actual web app URL
+      downloadUrl:   '#',          // ← replace with .exe download URL when ready
+      downloadLabel: 'تحميل النسخة المكتبية (.exe)',
+      downloadNote:  'قريباً — النسخة المكتبية قيد التطوير',
+      exeReady:      false,        // set true when .exe is available
+      tags:          ['ويب', 'مكتبي', 'مدارس أردنية'],
+      features: [
+        'إدارة الموازنة السنوية والفصلية',
+        'تتبع الإنفاق الفعلي مقابل المخطط',
+        'تقارير مالية احترافية قابلة للطباعة',
+        'يعمل في المتصفح بدون تثبيت',
+        'نسخة مكتبية (.exe) قريباً',
+      ],
+    },
+    {
+      id:            'gridforge',
+      name:          'GridForge',
+      tagline:       'تصميم وثائق بدقة المليمتر',
+      desc:          'أداة تصميم وثائق احترافية تعمل كلياً في المتصفح. ضع عناصرك بدقة المليمتر على صفحة ورقية افتراضية وصدّر PDF في ثوانٍ — بدون تثبيت، بدون خادم.',
+      icon:          '📐',
+      theme: {
+        primary:   '#4fffb0',
+        secondary: '#555870',
+        bg:        'linear-gradient(135deg, #1a1d2e 0%, #23263a 60%, #2a2d40 100%)',
+        accent:    '#4fffb0',
+        card:      'rgba(79,255,176,0.06)',
+        border:    'rgba(79,255,176,0.2)',
+      },
+      status:        'live',
+      appUrl:        'https://gridforge.futureisnow.site',          // ← replace with actual GridForge URL
+      downloadUrl:   null,
+      downloadLabel: null,
+      downloadNote:  null,
+      exeReady:      false,
+      tags:          ['ويب', 'تصميم', 'PDF'],
+      features: [
+        'قماش ورقي بالمليمتر (A4، A3، Letter)',
+        'نصوص، صور، وجداول قابلة للدمج',
+        'تصدير PDF بدقة عالية',
+        'شبكة snap للمحاذاة التلقائية',
+        'يعمل بالكامل في المتصفح — بدون إنترنت بعد التحميل',
+      ],
+    },
+    {
+      id:            'pixelstrip',
+      name:          'PixelStrip',
+      tagline:       'محرر صور احترافي في متصفحك',
+      desc:          'محرر صور متكامل يعمل كلياً في المتصفح بدون خادم أو تثبيت. يدعم إزالة الخلفية بالذكاء الاصطناعي محلياً، وأدوات رسم متكاملة، وتصدير PNG/JPG/ICO.',
+      icon:          '🖌️',
+      theme: {
+        primary:   '#f5c518',
+        secondary: '#2a2200',
+        bg:        'linear-gradient(135deg, #1a1500 0%, #2a2000 50%, #1f1c00 100%)',
+        accent:    '#f5c518',
+        card:      'rgba(245,197,24,0.06)',
+        border:    'rgba(245,197,24,0.2)',
+      },
+      status:        'live',
+      appUrl:        'https://pixelstrip.futureisnow.site',          // ← replace with actual PixelStrip URL
+      downloadUrl:   null,
+      downloadLabel: null,
+      downloadNote:  null,
+      exeReady:      false,
+      tags:          ['ويب', 'صور', 'AI', 'تصميم'],
+      features: [
+        'إزالة الخلفية بالذكاء الاصطناعي (محلياً بالكامل)',
+        'أدوات رسم: قلم، فرشاة، ممحاة، أشكال، نص',
+        'اقتصاص، تدوير، وتغيير الحجم',
+        'تصدير PNG، JPG، وICO',
+        'واجهة سحب وإفلات مع دعم الجوال',
+      ],
+    },
   ],
 
 };

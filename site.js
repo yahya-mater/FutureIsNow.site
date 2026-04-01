@@ -10,7 +10,7 @@
 
   const V = window.VALUES;
   const { brand, contact, navLinks, stats, services,
-          pricing, ajyalPlus, faq, whyUs, aboutValues } = V;
+          pricing, ajyalPlus, faq, whyUs, aboutValues, apps } = V;
 
   /* ── DERIVED URLS ─────────────────────────────────────────── */
   const waLink    = 'https://wa.me/' + contact.whatsapp.number;
@@ -240,6 +240,57 @@
   // Bulk note contact link — pricing.html
   var bulkNoteBtn = document.getElementById('bulk-note-btn');
   if (bulkNoteBtn) { bulkNoteBtn.href = waLink; }
+
+  // Apps grid — apps.html
+  var appsContainer = document.getElementById('apps-container');
+  if (appsContainer && apps) {
+    appsContainer.innerHTML = apps.map(function (app) {
+      var t = app.theme;
+
+      // Status badge
+      var statusMap = { 'live': ['متاح الآن', '#22c55e'], 'beta': ['تجريبي', '#f59e0b'], 'coming-soon': ['قريباً', '#6366f1'] };
+      var st = statusMap[app.status] || statusMap['coming-soon'];
+      var badgeHTML = '<span class="app-card__status" style="background:' + st[1] + '22;color:' + st[1] + ';border-color:' + st[1] + '44;">' + st[0] + '</span>';
+
+      // Tags
+      var tagsHTML = app.tags.map(function (tag) {
+        return '<span class="app-card__tag" style="background:' + t.primary + '18;color:' + t.primary + ';">' + tag + '</span>';
+      }).join('');
+
+      // Features
+      var featuresHTML = app.features.map(function (f) {
+        return '<li style="color:rgba(255,255,255,0.72);"><span style="color:' + t.accent + ';">✓</span> ' + f + '</li>';
+      }).join('');
+
+      // Action buttons
+      var actionsHTML = '';
+      if (app.status === 'live' && app.appUrl) {
+        actionsHTML += '<a href="' + app.appUrl + '" target="_blank" rel="noopener" class="app-card__btn app-card__btn--primary" style="background:' + t.primary + ';color:' + (t.primary === '#4fffb0' || t.primary === '#f5c518' ? '#111' : '#fff') + ';">فتح التطبيق ←</a>';
+      }
+      if (app.downloadUrl && app.exeReady) {
+        actionsHTML += '<a href="' + app.downloadUrl + '" class="app-card__btn app-card__btn--dl" style="border-color:' + t.primary + '55;color:' + t.primary + ';">⬇ ' + app.downloadLabel + '</a>';
+      } else if (app.downloadNote && !app.exeReady && app.id === 'mizan') {
+        actionsHTML += '<span class="app-card__btn app-card__btn--soon" style="border-color:' + t.primary + '33;color:' + t.primary + '88;">⬇ ' + app.downloadNote + '</span>';
+      }
+
+      return '<div class="app-card" style="background:' + t.bg + ';border-color:' + t.border + ';">'
+        + '<div class="app-card__header">'
+        + '<div class="app-card__icon" style="background:' + t.primary + '22;border:2px solid ' + t.primary + '44;">' + (app.icon || '🚀') + '</div>'
+        + '<div class="app-card__meta">'
+        + '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">'
+        + '<h2 class="app-card__name" style="color:' + t.accent + ';">' + app.name + '</h2>'
+        + badgeHTML
+        + '</div>'
+        + '<p class="app-card__tagline" style="color:rgba(255,255,255,0.55);">' + app.tagline + '</p>'
+        + '</div>'
+        + '</div>'
+        + '<p class="app-card__desc" style="color:rgba(255,255,255,0.7);">' + app.desc + '</p>'
+        + '<div class="app-card__tags">' + tagsHTML + '</div>'
+        + '<ul class="app-card__features">' + featuresHTML + '</ul>'
+        + '<div class="app-card__actions">' + actionsHTML + '</div>'
+        + '</div>';
+    }).join('');
+  }
 
   // FAQ accordion — faq.html
   var faqContainer = document.getElementById('faq-container');
