@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="app-page-title">تفاصيل التطبيق | المستقبل الآن</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:..." rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <!-- Hero — filled by JS -->
+  <section class="app-detail-hero" id="app-detail-hero">
+    <div class="app-detail-hero__inner">
+      <div class="app-detail-hero__badge" id="app-detail-badge"></div>
+      <div class="app-detail-hero__logo-row">
+        <div class="app-detail-hero__icon" id="app-detail-icon"></div>
+        <h1 class="app-detail-hero__title" id="app-detail-name"></h1>
+      </div>
+      <p class="app-detail-hero__sub" id="app-detail-sub"></p>
+      <!-- notify form, shown/hidden by JS -->
+      <div class="ap-hero__notify" id="app-detail-notify" style="display:none;">
+        <input type="email" id="app-detail-email" placeholder="أدخل بريدك الإلكتروني" class="notify-input">
+        <button id="app-detail-notify-btn" class="notify-btn">أبلغني عند الإطلاق</button>
+      </div>
+      <p id="app-detail-notify-msg" style="display:none;color:#4ade80;margin-top:12px;"></p>
+      <!-- live CTA, shown/hidden by JS -->
+      <div id="app-detail-cta" style="display:none;margin-top:28px;">
+        <a id="app-detail-open-btn" href="#" target="_blank" class="btn-primary">فتح التطبيق ←</a>
+        <a id="app-detail-dl-btn" href="#" style="display:none;" class="btn-secondary">⬇ تحميل</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic sections — filled by JS -->
+  <div id="app-detail-sections"></div>
+
+  <!-- Back link -->
+  <section class="section" style="text-align:center;padding-top:0;">
+    <a href="apps.html" class="btn-secondary">← العودة إلى التطبيقات</a>
+  </section>
+</main>
+
+<script src="values.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

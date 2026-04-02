@@ -272,6 +272,7 @@
       } else if (app.downloadNote && !app.exeReady && app.id === 'mizan') {
         actionsHTML += '<span class="app-card__btn app-card__btn--soon" style="border-color:' + t.primary + '33;color:' + t.primary + '88;">⬇ ' + app.downloadNote + '</span>';
       }
+      actionsHTML += '<a href="app.html?id=' + app.id + '" class="app-card__btn app-card__btn--more" style="border-color:' + t.primary + '44;color:' + t.primary + ';">تعرّف أكثر ↗</a>';
 
       return '<div class="app-card" style="background:' + t.bg + ';border-color:' + t.border + ';">'
         + '<div class="app-card__header">'
@@ -399,6 +400,132 @@
     indexNotifyBtn.addEventListener('click', function () {
       handleNotify(this.previousElementSibling, document.getElementById('notify-msg'), this);
     });
+  }
+
+  // App detail page — app.html
+  var appDetailHero = document.getElementById('app-detail-hero');
+  if (appDetailHero && apps) {
+    var params  = new URLSearchParams(window.location.search);
+    var appId   = params.get('id');
+    var app     = apps.find(function(a) { return a.id === appId; });
+  
+    if (!app) {
+      // App not found — show error
+      document.getElementById('app-detail-name').textContent = 'التطبيق غير موجود';
+      document.getElementById('app-detail-sub').textContent  = 'تحقق من الرابط أو عد إلى صفحة التطبيقات.';
+    } else {
+      var t  = app.theme;
+      var md = app.moreDetails || {};
+    
+      // Update <title>
+      document.getElementById('app-page-title').textContent = app.name + ' | المستقبل الآن';
+    
+      // Style hero background
+      appDetailHero.style.background = t.bg;
+    
+      // Badge
+      var badgeEl = document.getElementById('app-detail-badge');
+      if (md.heroBadge) {
+        badgeEl.textContent = md.heroBadge;
+        badgeEl.style.display = 'inline-flex';
+      } else { badgeEl.style.display = 'none'; }
+    
+      // Icon + Name
+      document.getElementById('app-detail-icon').textContent = app.icon || '🚀';
+      var nameEl = document.getElementById('app-detail-name');
+      nameEl.textContent = app.name;
+      nameEl.style.color = t.accent;          // gradient would need inline style trick
+    
+      // Sub
+      document.getElementById('app-detail-sub').textContent = md.heroSub || app.tagline;
+    
+      // Notify form (coming-soon apps)
+      if (md.notifyEnabled) {
+        document.getElementById('app-detail-notify').style.display = 'flex';
+        document.getElementById('app-detail-notify-btn').addEventListener('click', function() {
+          handleNotify(
+            document.getElementById('app-detail-email'),
+            document.getElementById('app-detail-notify-msg'),
+            this
+          );
+          document.getElementById('app-detail-notify-msg').style.display = 'block';
+        });
+      }
+    
+      // Live CTA
+      if (app.status === 'live' && app.appUrl) {
+        var ctaDiv = document.getElementById('app-detail-cta');
+        ctaDiv.style.display = 'flex';
+        ctaDiv.style.gap = '14px';
+        ctaDiv.style.justifyContent = 'center';
+        ctaDiv.style.flexWrap = 'wrap';
+        var openBtn = document.getElementById('app-detail-open-btn');
+        openBtn.href = app.appUrl;
+        openBtn.style.background = t.primary;
+        openBtn.style.color = (t.primary === '#4fffb0' || t.primary === '#f5c518') ? '#111' : '#fff';
+        if (app.downloadUrl && app.exeReady) {
+          var dlBtn = document.getElementById('app-detail-dl-btn');
+          dlBtn.style.display = 'inline-block';
+          dlBtn.href = app.downloadUrl;
+        }
+      }
+    
+      // Dynamic sections
+      var sectionsEl = document.getElementById('app-detail-sections');
+      if (sectionsEl && md.sections) {
+        sectionsEl.innerHTML = md.sections.map(function(sec) {
+        
+          if (sec.type === 'steps') {
+            var stepsHTML = sec.items.map(function(step, i, arr) {
+              var connector = i < arr.length - 1
+                ? '<div class="ap-step__connector"></div>' : '';
+              return '<div class="ap-step" style="border-color:' + t.border + ';background:rgba(255,255,255,0.04);">'
+                + '<div class="ap-step__num" style="background:' + t.secondary + ';">' + step.step + '</div>'
+                + '<div><h4 style="color:white;">' + step.title + '</h4>'
+                + '<p style="color:rgba(255,255,255,0.55);">' + step.desc + '</p></div>'
+                + '</div>' + connector;
+            }).join('');
+            return '<section class="app-detail-section" style="background:' + t.bg + ';padding:70px 40px;">'
+              + '<div style="max-width:700px;margin:0 auto;">'
+              + '<div class="section-header"><h2 style="color:white;">' + sec.title + '</h2></div>'
+              + '<div class="ap-what__steps">' + stepsHTML + '</div>'
+              + '</div></section>';
+          }
+        
+          if (sec.type === 'features-grid') {
+            var featsHTML = sec.items.map(function(f) {
+              return '<div class="ap-feat" style="background:' + t.card + ';border-color:' + t.border + ';">'
+                + '<div class="ap-feat__icon">' + f.icon + '</div>'
+                + '<h3 style="color:white;">' + f.label + '</h3>'
+                + '<p>' + (f.desc || '') + '</p>'
+                + '</div>';
+            }).join('');
+            return '<section class="app-detail-section" style="background:' + t.bg + ';padding:70px 40px;">'
+              + '<div style="max-width:1100px;margin:0 auto;">'
+              + '<div class="section-header"><h2 style="color:white;">' + sec.title + '</h2></div>'
+              + '<div class="ap-features-grid">' + featsHTML + '</div>'
+              + '</div></section>';
+          }
+        
+          if (sec.type === 'note') {
+            var colorMap = {
+              green:  { bg: 'rgba(34,197,94,0.06)',  border: 'rgba(34,197,94,0.2)',  title: '#166534', body: 'var(--ink-light)' },
+              yellow: { bg: 'rgba(245,197,24,0.06)', border: 'rgba(245,197,24,0.2)', title: '#78350f', body: 'var(--ink-light)' },
+              blue:   { bg: 'rgba(99,102,241,0.07)', border: 'rgba(99,102,241,0.25)',title: '#3730a3', body: 'var(--ink-light)' },
+            };
+            var c = colorMap[sec.color] || colorMap['blue'];
+            return '<section class="section">'
+              + '<div class="ap-security" style="background:' + c.bg + ';border-color:' + c.border + ';max-width:860px;">'
+              + '<div class="ap-security__icon">' + sec.icon + '</div>'
+              + '<div><h3 style="color:' + c.title + ';">' + sec.title + '</h3>'
+              + '<p>' + sec.body + '</p></div>'
+              + '</div></section>';
+          }
+        
+          return ''; // unknown section type — skip
+        }).join('');
+      }
+    }
   }
 
 })();
