@@ -123,7 +123,7 @@ window.VALUES = {
     {
       id:           'performance-record',
       icon:         '📊',
-      title:        'سجل الأداء والجانب',
+      title:        'سجل الأداء والجانبي',
       priceLabel:   'يبدأ من',
       price:        '١,٥',
       priceTo:      '٣',            // range: ١.٥ – ٣ دينار
@@ -351,8 +351,8 @@ window.VALUES = {
    */
   apps: [
     {
-      id:            'ajyal-plus',
-      name:          'Ajyal Plus',
+      id:            'ajyal-assistant',
+      name:          'Ajyal Assistant',
       tagline:       'وثائقك المدرسية في ثوانٍ',
       desc:          'تطبيق يربط مباشرةً بحسابك في نظام أجيال التعليمي...',
       icon:          '🚀',
@@ -364,21 +364,30 @@ window.VALUES = {
         card:      'rgba(99,102,241,0.08)',
         border:    'rgba(99,102,241,0.25)',
       },
-      status:        'coming-soon',
+      status:        'beta',//'live',
       appUrl:        null,
-      downloadUrl:   null,
-      exeReady:      false,
-      tags:          ['ويب', 'نظام أجيال', 'قريباً'],
-      features: [ /* copy from ajyalPlus.features labels */ ],
+      downloadUrl:   "https://www.futureisnow.site/downloads/Ajyal%20Assistant_v1.1.zip",
+      downloadLabel: 'تحميل النسخة المكتبية (.exe)',
+      downloadNote:  'قريباً — النسخة المكتبية قيد التطوير',
+      exeReady:      true,
+      tags:          ['آب', 'مكتبي', 'نظام أجيال', 'مدارس أردنية'],
+      features: [
+        'دفتر العلامات تلقائياً',
+        'دفتر الحضور والغياب',
+        'الإحصاءات والتحليلات',
+        'استمارات الطلب الرسمية',
+        'شهادات الطلاب',
+        'قوالب مخصصة خاصة بك',
+      ],
       moreDetails: {
-        heroBadge:     'قريباً جداً',
+        //heroBadge:     'قريباً جداً',
         heroSub:       'سجّل دخولك بحساب أجيال واستخرج كل ما تحتاجه تلقائياً.',
-        notifyEnabled: true,
+        notifyEnabled: false,
         sections: [
  
           {
             type:  'steps',
-            title: 'كيف يعمل Ajyal Plus؟',
+            title: 'كيف يعمل Ajyal Assistant؟',
             items: [
               { step: '١', title: 'سجّل دخولك',   desc: 'بنفس حساب أجيال الخاص بك' },
               { step: '٢', title: 'اختر شعبتك',   desc: 'يتم استيراد أسماء الطلاب وبياناتهم تلقائياً' },
@@ -546,6 +555,7 @@ window.VALUES = {
         ],
       },
     },
+    /*
     {
       id:            'gridforge',
       name:          'GridForge',
@@ -669,7 +679,7 @@ window.VALUES = {
  
         ],
       },
-    },
+    },*/
     {
       id:            'pixelstrip',
       name:          'PixelStrip',
