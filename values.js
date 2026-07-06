@@ -439,7 +439,7 @@ window.VALUES = {
       downloadUrl:   "https://www.futureisnow.site/downloads/Mizan_v1.1.zip",
       downloadLabel: 'تحميل النسخة المكتبية (.exe)',
       downloadNote:  'قريباً — النسخة المكتبية قيد التطوير',
-      exeReady:      false,        // set true when .exe is available
+      exeReady:      true,        // set true when .exe is available
       tags:          ['ويب', 'مكتبي', 'مدارس أردنية'],
       features: [
         'إدارة الموازنة السنوية والفصلية',
