@@ -267,6 +267,7 @@
       if (app.status === 'live' && app.appUrl) {
         actionsHTML += '<a href="' + app.appUrl + '" target="_blank" rel="noopener" class="app-card__btn app-card__btn--primary" style="background:' + t.primary + ';color:' + (t.primary === '#4fffb0' || t.primary === '#f5c518' ? '#111' : '#fff') + ';">فتح التطبيق ←</a>';
       }
+      
       if (app.downloadUrl && app.exeReady) {
         //actionsHTML += '<a href="' + app.downloadUrl + '" class="app-card__btn app-card__btn--dl" style="border-color:' + t.primary + '55;color:' + t.primary + ';">⬇ ' + app.downloadLabel + '</a>';
         actionsHTML += '<a href="' + app.downloadUrl + '" target="_blank" rel="noopener" class="app-card__btn app-card__btn--primary" style="background:' + t.primary + ';color:' + (t.primary === '#4fffb0' || t.primary === '#f5c518' ? '#111' : '#fff') + ';">⬇ ' + app.downloadLabel + '</a>';
